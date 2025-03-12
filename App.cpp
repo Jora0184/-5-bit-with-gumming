@@ -1,12 +1,12 @@
-#include "MainFrame.h"
+ï»¿#include "MainFrame.h"
 #include "App.h"
-
 #include <wx/wx.h>
+
 
 wxIMPLEMENT_APP(App);
 
 bool App::OnInit() {
-    MainFrame* mainFrame = new MainFrame("C++ GUI XOR Encryption");
+    MainFrame* mainFrame = new MainFrame("C++ 5-Bit with Gumming");
     mainFrame->SetClientSize(800, 450);
     mainFrame->Center();
     mainFrame->Show();
@@ -16,48 +16,48 @@ bool App::OnInit() {
 MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) {
     wxPanel* panel = new wxPanel(this);
 
-    // Ñîçäà¸ì øðèôò ñ óâåëè÷åííûì ðàçìåðîì (íàïðèìåð, 12   ïóíêòîâ)
+    // Ð¡Ð¾Ð·Ð´Ð°Ñ‘Ð¼ ÑˆÑ€Ð¸Ñ„Ñ‚ Ñ ÑƒÐ²ÐµÐ»Ð¸Ñ‡ÐµÐ½Ð½Ñ‹Ð¼ Ñ€Ð°Ð·Ð¼ÐµÑ€Ð¾Ð¼ (Ð½Ð°Ð¿Ñ€Ð¸Ð¼ÐµÑ€, 12   Ð¿ÑƒÐ½ÐºÑ‚Ð¾Ð²)
     wxFont largeFont(12, wxFONTFAMILY_TELETYPE, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL);
     wxFont largeFont2(12, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL);
 
-    // Òåêñò "Write text"
+    // Ð¢ÐµÐºÑÑ‚ "Write text"
     wxStaticText* staticText1 = new wxStaticText(panel, wxID_ANY, "Write text", wxPoint(55, 30));
-    staticText1->SetFont(largeFont); // Ïðèìåíÿåì øðèôò
+    staticText1->SetFont(largeFont); // ÐŸÑ€Ð¸Ð¼ÐµÐ½ÑÐµÐ¼ ÑˆÑ€Ð¸Ñ„Ñ‚
     textCtrl1 = new wxTextCtrl(panel, wxID_ANY, "", wxPoint(50, 50), wxSize(350, 25));
     textCtrl1->SetFont(largeFont);
 
-    // Êëþ÷ "Write key"
+    // ÐšÐ»ÑŽÑ‡ "Write key"
     wxStaticText* staticText2 = new wxStaticText(panel, wxID_ANY, "Write key", wxPoint(55, 80));
     staticText2->SetFont(largeFont);
     textCtrl2 = new wxTextCtrl(panel, wxID_ANY, "", wxPoint(50, 100), wxSize(350, 25));
     textCtrl2->SetFont(largeFont);
 
-    // Ïðîöåññ XOR
+    // ÐŸÑ€Ð¾Ñ†ÐµÑÑ XOR
     wxStaticText* staticText3 = new wxStaticText(panel, wxID_ANY, "XOR Process", wxPoint(455, 30));
     staticText3->SetFont(largeFont2);
     textCtrl3 = new wxTextCtrl(panel, wxID_ANY, "", wxPoint(450, 50), wxSize(300, 300), wxTE_MULTILINE | wxTE_READONLY);
     textCtrl3->SetFont(largeFont2);
 
-    // Êíîïêà
+    // ÐšÐ½Ð¾Ð¿ÐºÐ°
     wxStaticText* staticText4 = new wxStaticText(panel, wxID_ANY, "Click the button to encode", wxPoint(55, 240));
     staticText4->SetFont(largeFont);
     wxButton* button = new wxButton(panel, wxID_ANY, "Encode", wxPoint(50, 260), wxSize(100, 35));
     button->SetFont(largeFont);
     button->Bind(wxEVT_BUTTON, &MainFrame::OnButtonClicked, this);
 
-    // Íîâàÿ êíîïêà "Clear" (ñïðàâà îò "Encode")
-    wxButton* clearButton = new wxButton(panel, wxID_ANY, "Clear", wxPoint(50, 360), wxSize(700, 30));
-    clearButton->SetFont(largeFont);
-    clearButton->Bind(wxEVT_BUTTON, &MainFrame::OnClearButtonClicked, this);
-
-    // Çàøèôðîâàííûé òåêñò
+    // Ð—Ð°ÑˆÐ¸Ñ„Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ð¹ Ñ‚ÐµÐºÑÑ‚
     wxStaticText* staticText5 = new wxStaticText(panel, wxID_ANY, "Ciphertext", wxPoint(55, 305));
     staticText5->SetFont(largeFont);
     textCtrl4 = new wxTextCtrl(panel, wxID_ANY, "", wxPoint(50, 325), wxSize(350, 25), wxTE_READONLY);
     textCtrl4->SetFont(largeFont);
     
+    // ÐÐ¾Ð²Ð°Ñ ÐºÐ½Ð¾Ð¿ÐºÐ° "Clear" (ÑÐ¿Ñ€Ð°Ð²Ð° Ð¾Ñ‚ "Encode")
+    wxButton* clearButton = new wxButton(panel, wxID_ANY, "Clear", wxPoint(50, 360), wxSize(700, 30));
+    clearButton->SetFont(largeFont);
+    clearButton->Bind(wxEVT_BUTTON, &MainFrame::OnClearButtonClicked, this);
+
     //
-    wxStaticText* staticText6 = new wxStaticText(panel, wxID_ANY, "Use only A-Z and symbols , . space ; - ?", wxPoint(280, 410));
+    wxStaticText* staticText6 = new wxStaticText(panel, wxID_ANY, "Use only A-Z and symbols , . space ; - ?", wxPoint(200, 410));
     staticText6->SetFont(largeFont);
 
 }

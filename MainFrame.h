@@ -1,4 +1,4 @@
-#ifndef MAINFRAME_H
+ï»¿#ifndef MAINFRAME_H
 #define MAINFRAME_H
 
 #include <wx/wx.h>
@@ -8,17 +8,16 @@ public:
     MainFrame(const wxString& title);
 
 private:
-    wxTextCtrl* textCtrl1; // Ïîëå äëÿ ñîîáùåíèÿ
-    wxTextCtrl* textCtrl2; // Ïîëå äëÿ êëþ÷à
-    wxTextCtrl* textCtrl3; // Ïîëå äëÿ ïðîöåññà øèôðîâàíèÿ
-    wxTextCtrl* textCtrl4; // Ïîëå äëÿ ðåçóëüòàòà
+    wxTextCtrl* textCtrl1; // ÐŸÐ¾Ð»Ðµ Ð´Ð»Ñ ÑÐ¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ñ
+    wxTextCtrl* textCtrl2; // ÐŸÐ¾Ð»Ðµ Ð´Ð»Ñ ÐºÐ»ÑŽÑ‡Ð°
+    wxTextCtrl* textCtrl3; // ÐŸÐ¾Ð»Ðµ Ð´Ð»Ñ Ð¿Ñ€Ð¾Ñ†ÐµÑÑÐ° ÑˆÐ¸Ñ„Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ
+    wxTextCtrl* textCtrl4; // ÐŸÐ¾Ð»Ðµ Ð´Ð»Ñ Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚Ð°
 
-
-    void OnButtonClicked(wxCommandEvent& event); // Îáðàáîò÷èê êíîïêè "Encode"
-    void OnClearButtonClicked(wxCommandEvent& event); // Íîâûé îáðàáîò÷èê êíîïêè "Clear"
-    // Ïðåîáðàçîâàíèå ñèìâîëà â ÷èñëî (A-Z è äîïîëíèòåëüíûå ñèìâîëû -> 0-31)
+    void OnButtonClicked(wxCommandEvent& event); // ÐžÐ±Ñ€Ð°Ð±Ð¾Ñ‚Ñ‡Ð¸Ðº ÐºÐ½Ð¾Ð¿ÐºÐ¸ "Encode"
+    void OnClearButtonClicked(wxCommandEvent& event); // ÐÐ¾Ð²Ñ‹Ð¹ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚Ñ‡Ð¸Ðº ÐºÐ½Ð¾Ð¿ÐºÐ¸ "Clear"
+    // ÐŸÑ€ÐµÐ¾Ð±Ñ€Ð°Ð·Ð¾Ð²Ð°Ð½Ð¸Ðµ ÑÐ¸Ð¼Ð²Ð¾Ð»Ð° Ð² Ñ‡Ð¸ÑÐ»Ð¾ (A-Z Ð¸ Ð´Ð¾Ð¿Ð¾Ð»Ð½Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ðµ ÑÐ¸Ð¼Ð²Ð¾Ð»Ñ‹ -> 0-31)
     char Binary(char c);
-    // Ïðåîáðàçîâàíèå ÷èñëà â ñèìâîë (0-31 -> A-Z, , . = ; - ?)
+    // ÐŸÑ€ÐµÐ¾Ð±Ñ€Ð°Ð·Ð¾Ð²Ð°Ð½Ð¸Ðµ Ñ‡Ð¸ÑÐ»Ð° Ð² ÑÐ¸Ð¼Ð²Ð¾Ð» (0-31 -> A-Z, , . = ; - ?)
     char Char(char value);
 };
 

@@ -1,8 +1,9 @@
-#include "MainFrame.h"
+ï»¿#include "MainFrame.h"
 #include <bitset>
 #include <string>
 
 using namespace std;
+
 
 void MainFrame::OnButtonClicked(wxCommandEvent& event) {
     string message = textCtrl1->GetValue().ToStdString();
@@ -40,7 +41,7 @@ void MainFrame::OnButtonClicked(wxCommandEvent& event) {
 }
 
 void MainFrame::OnClearButtonClicked(wxCommandEvent& event) {
-    // Î÷èùàåì âñå òåêñòîâûå ïîëÿ
+    // ÐžÑ‡Ð¸Ñ‰Ð°ÐµÐ¼ Ð²ÑÐµ Ñ‚ÐµÐºÑÑ‚Ð¾Ð²Ñ‹Ðµ Ð¿Ð¾Ð»Ñ
     textCtrl1->Clear();
     textCtrl2->Clear();
     textCtrl3->Clear();
